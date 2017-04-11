@@ -5,12 +5,14 @@ puts "Enter a starting year"
 starting_year = gets.chomp.to_i
 puts "Enter a ending year"
 ending_year = gets.chomp.to_i
+puts "Here are the leap years."
 
-leap_years = (starting_year..ending_year).to_a
-puts leap_years
-  leap_years.each do |i|
-    if i & 4 == 0
-      leap_years.pop(i)
+start = starting_year
+  while start <= ending_year
+    if start % 4 == 0
+      if start % 100 != 0 || start % 400 == 0
+        puts start
+      end
     end
+    start += 1
   end
-  binding.pry 
