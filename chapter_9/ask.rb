@@ -5,9 +5,9 @@ def ask(question)
 
     if reply == "yes" || "no"
       if reply == "yes"
-        answer = true
+        true
       else
-        answer = false
+        false
       end
       break
     else
@@ -15,7 +15,7 @@ def ask(question)
     end
   end
 
-  answer
+  return
 end
 puts "Hello, and thank you for.."
 puts
