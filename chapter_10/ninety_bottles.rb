@@ -77,18 +77,15 @@ def english_number(number)
   num_string
 end
 
-puts english_number(0)
-puts english_number(9)
-puts english_number(10)
-puts english_number(11)
-puts english_number(17)
-puts english_number(32)
-puts english_number(88)
-puts english_number(99)
-puts english_number(100)
-puts english_number(101)
-puts english_number(234)
-puts english_number(3211)
-puts english_number(999999)
-puts english_number(1000000000000)
-puts english_number(1092387451029385601298347092853432424234)
+num_at_start = 1000
+num_now = num_at_start
+
+while num_now > 2
+  puts "#{english_number(num_now).capitalize} bottles of beer on the wall, #{english_number(num_now)} bottles of beer!"
+  num_now -= 1
+  puts "Take on down, pass it around, #{english_number(num_now)} bottle of beer on the wall!"
+end
+puts "Two bottles of beer on the wall, two bottles of beer!"
+puts "Take one down, pass it around, one bottle of beer on the wall!"
+puts "One bottle of beer on the wall, one bottle of beer!"
+puts "Take one down, pass it around, no more bottles of beer on the wall!"  
