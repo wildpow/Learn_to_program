@@ -32,25 +32,37 @@ class OrangeTree
     puts "Your tree has #{@orange_count} oranges."
     @orange_count
   end
+
+  def pick_an_orange
+    if @orange_count == 0
+      puts "There are no more oranges this year"
+    else
+      @orange_count -= 1
+      puts "That orange was great."
+    end
+  end
+
 end
 
-new_tree = OrangeTree.new
-new_tree.one_year_passes
-new_tree.one_year_passes
-new_tree.one_year_passes
-new_tree.one_year_passes
-new_tree.one_year_passes
-new_tree.one_year_passes
-new_tree.count_the_oranges
-new_tree.height
-new_tree.one_year_passes
-new_tree.one_year_passes
-new_tree.one_year_passes
-new_tree.one_year_passes
-new_tree.one_year_passes
-new_tree.count_the_oranges
-new_tree.height
-new_tree.one_year_passes
-new_tree.one_year_passes
-new_tree.one_year_passes
-new_tree.one_year_passes
+tree = OrangeTree.new
+tree.one_year_passes
+tree.one_year_passes
+tree.one_year_passes
+tree.one_year_passes
+tree.one_year_passes
+tree.one_year_passes
+tree.pick_an_orange
+tree.count_the_oranges
+tree.height
+tree.one_year_passes
+tree.one_year_passes
+tree.one_year_passes
+tree.one_year_passes
+tree.pick_an_orange
+tree.one_year_passes
+tree.count_the_oranges
+tree.height
+tree.one_year_passes
+tree.one_year_passes
+tree.one_year_passes
+tree.one_year_passes

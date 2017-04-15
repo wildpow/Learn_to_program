@@ -5,8 +5,12 @@ class Dragon
     @asleep = false
     @stuff_in_belly = 10
     @stuff_in_intestine  = 0
+    @your_alive = true
 
     puts "#{@name} is born."
+  end
+  def alive?
+    @your_alive
   end
 
   def feed
@@ -55,6 +59,22 @@ class Dragon
     end
   end
 
+  def check_command(input)
+    if input == "rock"
+      rock
+    elsif input == "toss"
+      toss
+    elsif input == "put to bed"
+      put_to_bed
+    elsif input == "walk"
+      walk
+    elsif input == "feed"
+      feed
+    end
+  end
+
+
+
   private
 
   def hungry?
@@ -75,6 +95,7 @@ class Dragon
         puts "He wakes up suddenly!"
       end
       puts "#{@name} is starving! In desperation, he ate YOU!!"
+      @your_alive = false
       exit
     end
 
@@ -99,14 +120,13 @@ class Dragon
     end
   end
 end
+puts "What would you like to name your new dragon?"
+name = gets.chomp
 
-pet = Dragon.new 'Norbert'
-pet.feed
-pet.toss
-pet.walk
-pet.put_to_bed
-pet.rock
-pet.put_to_bed
-pet.put_to_bed
-pet.put_to_bed
-pet.put_to_bed
+pet = Dragon.new name
+puts
+while pet.alive?
+  puts "Now what? 'feed', 'walk', 'rock', 'toss', 'put to bed'"
+  input = gets.chomp.downcase
+  pet.check_command(input)
+end
